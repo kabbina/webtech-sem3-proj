@@ -23,7 +23,7 @@ export const login = (email, password) => async (dispatch) => {
         'Content-Type': 'application/json',
       },
     }
-
+//askdyaiutsroi
     const { data } = await axios.post(
       '/api/users/login',
       { email, password },
@@ -60,7 +60,6 @@ export const register = (name, email, password) => async (dispatch) => {
     })
 
     const config = {
-      
       headers: {
         'Content-Type': 'application/json',
       },
