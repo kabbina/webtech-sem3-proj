@@ -1,55 +1,45 @@
-import { Button, Flex } from "@chakra-ui/core";
-import React, { Fragment } from "react";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { logout } from "../actions/userActions";
-
+import {
+    Button,
+    Flex
+} from "@chakra-ui/core";
+import React, { Fragment, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import Header from "./Header";
+import "../Containers/Dashboardstyle.css";
 const Dashboard = () => {
-  const history = useHistory();
-  const dispatch = useDispatch();
-  const handleGame = () => {
-    history.push("/game");
-  };
-  const handleQuiz = () => {
-    history.push("/quiz");
-  };
-  const handleLogout = () => {
-    dispatch(logout());
-  };
-  return (
-    <Fragment>
-      <Flex height="10vh">
-        <Button
-          variant="outline"
-          variantColor="white"
-          _hover={{ color: `red.500` }}
-          position="absolute"
-          top="2"
-          right="2"
-          onClick={handleLogout}
-        >
-          Logout
-        </Button>
-      </Flex>
-      <Flex align="center" justify="center" height="20vh" direction="column">
-        <h1 style={{ fontSize: 2 + "em", margin: 0.67 + "em" + 0 }}>
-          Welcome !
-        </h1>
-      </Flex>
-      <Flex align="center" justify="center" height="23vh" direction="column">
-        <h3 style={{ marginBottom: 2 + "px", fontSize: 1.3 + "em" }}>
-          Would like to play a game
-        </h3>
-        <Button bg="blue.300" size="lg" type="button" onClick={handleGame}>
-          Tic Toc Toe
-        </Button>
-        <br />
-        <Button bg="blue.300" size="lg" type="button" onClick={handleQuiz}>
-          Quiz
-        </Button>
-      </Flex>
-    </Fragment>
-  );
-};
+    const history = useHistory();
+    const userLogin = useSelector((state) => state.userLogin)
+    const { userInfo } = userLogin;
+    const [ userName, setUserName ] = useState('');
+    const handleGame = () => {
+        history.push({pathname: '/game', state: userName});
+    }
+    const handleQuiz = () => {
+        history.push({pathname: '/quiz', state: userName});
+    }
+    const emptyCheck = (value) => {
+        return value && Object.keys(value).length === 0 && value.constructor === Object;
+      }
+    useEffect(() => {
+        if (userInfo && !emptyCheck(userInfo)) {
+            setUserName(userInfo.name);
+        }
+    }, [userInfo]);
+    return (
+    <div className = 'dbstyle'>
+        <Fragment>
+            <Header />
+            {userName && <Flex className = 'dbstyle' align="center" justify="center" height="70vh" direction="column">
+            <h1 className = 'greet'>Welcome {userName} !</h1>
+    
+            <h3 className = 'prompt'>Would like to play a game?</h3>
+            <Button size="lg" type="button" onClick={handleGame}>Tic Toc Toe</Button> <br/>
+            <Button  size="lg" type="button" onClick={handleQuiz}>Quiz</Button>
+            </Flex>}
+        </Fragment>
+        </div>
+    )
+}
 
-export default Dashboard;
+export default Dashboard

@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from '../actions/userActions'
+import "../Containers/HomePagestyle.css";
 
 const Homepage = ({ location, history }) => {
   const [email, setEmail] = useState('')
@@ -32,7 +33,7 @@ const Homepage = ({ location, history }) => {
   }
   return (
     <Fragment>
-      <Flex align="center" justify="center" height="100vh" direction="column">
+      <Flex className = 'homepg'align="center" justify="center" height="100vh" direction="column">
       {error && <Alert variant='danger'>{error}</Alert>}
       {loading && <Spinner
   thickness="4px"

@@ -1,8 +1,9 @@
+import { Alert, Button, Flex, FormControl, Input, Spinner } from '@chakra-ui/core';
 import React, { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { register } from '../actions/userActions';
-import { Alert, Button, Flex, FormControl, Input, Spinner } from '@chakra-ui/core';
+import { useHistory } from 'react-router-dom';
+import "../Containers/RegisterUserstyle.css";
 
 const RegisterUser = ({location}) => {
 	const dispatch = useDispatch();
@@ -33,18 +34,20 @@ const RegisterUser = ({location}) => {
 		}
 	};
 	return (
-		<Fragment>
+
+		<div className = 'regpage'>
+		<Fragment >
 			<Flex align='center' justify='center' height='100vh' direction='column'>
 			{message && <Alert variant='danger'>{message}</Alert>}
       		{error && <Alert variant='danger'>{error}</Alert>}
       		{loading && <Spinner
-  thickness="4px"
-  speed="0.65s"
-  emptyColor="gray.200"
-  color="blue.500"
-  size="xl"
+ 				 thickness="4px"
+ 				 speed="0.65s"
+ 				 emptyColor="gray.200"
+ 				 color="blue.500"
+				  size="xl"
 />}
-				<h3>Register Here</h3>
+				<h3 className = 'Regheading'>Register Here</h3>
 				<FormControl mt='20px'>
 					<Input placeholder='Name' size='lg' value={name} onChange={(e) => setName(e.target.value)} />
 				</FormControl>
@@ -76,13 +79,14 @@ const RegisterUser = ({location}) => {
 				</FormControl>
 				<Button mt='20px' variantColor='green' size='lg' onClick={submitHandler}>
 					Register
-				</Button>
-				Have an Account?
+				</Button >
+				<h6 className = 'question'>Have an Account?</h6>
 				<Button size='lg' onClick={handleLogin}>
 					Login
 				</Button>
 			</Flex>
 		</Fragment>
+		</div>
 	);
 };
 

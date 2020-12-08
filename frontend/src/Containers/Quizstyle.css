@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,400;1,600&display=swap');
+
+.result {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.page{
+    background-image: url("background2.jpg");
+}
+
+.page2{
+    background-image: url("background.jpg") ;
+    background-size: cover;
+
+}
+.result div{
+    color:  #191d19
+}
+.result li {
+    padding: 5px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    color:whitesmoke;
+}
+
+.result h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #cccccc;
+}
+
+.App .Qno {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(182, 114, 26);
+    padding-bottom: 5%;
+}
+
+.App .Question {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    padding-bottom: 5%;
+}

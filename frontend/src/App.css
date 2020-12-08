@@ -53,7 +53,7 @@ ul {
 
 .square {
   background: #fff;
-  border: 1px solid rgb(233, 6, 6);
+  border: 1px solid #999;
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -78,4 +78,18 @@ ul {
 
 .game-info {
   margin-left: 20px;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,400;1,600&display=swap');
+.result {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #cccccc;
+}
+
+.game .game-board {
+    color: rgb(21, 4, 75);
 }

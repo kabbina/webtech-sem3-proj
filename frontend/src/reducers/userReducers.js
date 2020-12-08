@@ -12,7 +12,7 @@ import {
   USER_REGISTER_SUCCESS,
 } from '../constants/userConstants'
 
-export const userLoginReducer = (state = {}, action) => {//reduser function for user login
+export const userLoginReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_LOGIN_REQUEST:
       return { loading: true }

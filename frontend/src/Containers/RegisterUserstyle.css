@@ -1,0 +1,14 @@
+.Regheading{
+    font-size: larger;
+    font-weight: bolder;
+    color: white;
+}
+
+.question{
+    color: white;
+}
+
+.regpage{
+    background-image: url("bg5.jpg");
+    background-size: cover;
+}

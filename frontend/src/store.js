@@ -7,16 +7,18 @@ import {
   userDetailsReducer,
 } from './reducers/userReducers'
 import { quizDetailsReducer } from './reducers/quizReducers'
+import { tictoeWinnerDetailsReducer, quizWinnerDetailsReducer } from './reducers/winnerReducer'
 const reducer = combineReducers({
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
   userDetails: userDetailsReducer,
   quizDetails: quizDetailsReducer,
+  tictoeWinnerDetails: tictoeWinnerDetailsReducer,
+  quizWinnerDetails: quizWinnerDetailsReducer
 })
 
 
 const userInfoFromStorage = localStorage.getItem('userInfo')
-
   ? JSON.parse(localStorage.getItem('userInfo'))
   : null
 
