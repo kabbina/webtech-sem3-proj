@@ -1,9 +1,9 @@
-import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import users from './data/users.js';
 import Quiz from './models/quizModel.js';
 import User from './models/userModel.js';
 import questions from './data/quizData.js';
+import dotenv from 'dotenv';
 
 dotenv.config();
 connectDB();

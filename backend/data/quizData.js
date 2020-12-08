@@ -26,8 +26,8 @@ const quizData = [{
     topic: 'Web Protocols and HTML',
     id: 4,
     question: `<DT> tag is designed to fit a single line of our web page but <DD> tag will accept a`,
-    options: [`2`,`3`,`4`,`5`],
-    answer: `2`
+    options: [`Line of text`,`Full paragraph`,`Word`,`request`],
+    answer: `Full paragraph`
 },
 {
     topic: 'Indian Festivals',
